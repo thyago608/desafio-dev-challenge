@@ -1,0 +1,74 @@
+@font-face {
+  font-family: "icomoon";
+  src: url("fonts/icomoon.eot?ndf0we");
+  src: url("fonts/icomoon.eot?ndf0we#iefix") format("embedded-opentype"),
+    url("fonts/icomoon.ttf?ndf0we") format("truetype"),
+    url("fonts/icomoon.woff?ndf0we") format("woff"),
+    url("fonts/icomoon.svg?ndf0we#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+
+  src: url("fonts/icomoon.eot?g1nefi");
+  src: url("fonts/icomoon.eot?g1nefi#iefix") format("embedded-opentype"),
+    url("fonts/icomoon.ttf?g1nefi") format("truetype"),
+    url("fonts/icomoon.woff?g1nefi") format("woff"),
+    url("fonts/icomoon.svg?g1nefi#icomoon") format("svg");
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-close:before {
+  content: "\e900";
+}
+
+.icon-plus:before {
+  content: "\f067";
+}
+.icon-minus:before {
+  content: "\f068";
+}
+.icon-align-right:before {
+  content: "\f038";
+}
+.icon-long-arrow-left:before {
+  content: "\e900";
+}
+.icon-dollar:before {
+  content: "\e901";
+}
+.icon-long-arrow-right:before {
+  content: "\e902";
+}
+.icon-instagram:before {
+  content: "\e903";
+}
+.icon-facebook:before {
+  content: "\e904";
+}
+.icon-facebook-f:before {
+  content: "\e904";
+}
+.icon-twitter:before {
+  content: "\e905";
+}
+.icon-shopping-bag:before {
+  content: "\e906";
+}
+.icon-menu:before {
+  content: "\e907";
+}

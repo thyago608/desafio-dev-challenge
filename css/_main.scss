@@ -1,0 +1,286 @@
+.main {
+  max-width: 1200px;
+
+  margin: 2rem auto 0;
+  min-height: 100vh;
+  padding: 0 2rem;
+
+  .box {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    @media (min-width: 900px) {
+      justify-content: flex-start;
+
+      .hero {
+        justify-content: space-between;
+      }
+    }
+  }
+
+  .hero {
+    flex: 1;
+    height: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width: 900px) {
+      align-items: flex-start;
+
+      .hero-left,
+      .hero-right {
+        margin-top: 10rem;
+      }
+
+      .hero-left {
+        header {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  .hero-left {
+    header {
+      margin-left: 2rem;
+    }
+
+    h1 {
+      text-transform: uppercase;
+      font-size: 2.2rem;
+      color: var(--orange);
+      letter-spacing: 3px;
+    }
+    span {
+      display: block;
+      margin: 0.4rem 0;
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #111;
+    }
+
+    button {
+      margin-top: 2rem;
+      width: 7rem;
+      height: 3.2rem;
+
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      border: 0;
+      background: transparent;
+
+      position: relative;
+
+      text-transform: uppercase;
+      font-size: 0.9rem;
+
+      &::before {
+        content: "";
+
+        width: 60%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 20%;
+
+        background: rgb(214, 214, 214);
+
+        z-index: -1;
+      }
+    }
+  }
+
+  .hero-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    button.next {
+      margin-top: 2rem;
+      width: 7rem;
+      height: 3.2rem;
+
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      border: 0;
+      background: transparent;
+
+      position: relative;
+
+      text-transform: uppercase;
+      font-size: 0.9rem;
+
+      &::before {
+        content: "";
+
+        width: 60%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 20%;
+
+        background: rgb(214, 214, 214);
+
+        z-index: -1;
+      }
+    }
+
+    .genr {
+      margin-top: 1rem;
+
+      button {
+        border: 0;
+        margin: 0 0.5rem;
+
+        width: 1.7rem;
+        height: 1.7rem;
+
+        text-transform: uppercase;
+        border-radius: 50%;
+
+        border: 3px solid rgb(221, 221, 221);
+        transition: border-color 0.2s ease;
+
+        &:focus {
+          outline-color: var(--orange);
+        }
+
+        &:hover {
+          border-color: var(--orange);
+        }
+      }
+    }
+
+    .count-product {
+      margin-top: 1rem;
+      border: 1px solid rgb(194, 194, 194);
+      padding: 0.3rem;
+
+      width: 100px;
+
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.2rem;
+      background: #fff;
+
+      button {
+        padding: 0 0.7rem;
+        border: 0;
+        background: transparent;
+
+        i {
+          font-size: 0.7rem;
+        }
+      }
+
+      .activeCount {
+        animation-name: labelActive;
+        animation-duration: 0.3s;
+        animation-direction: alternate-reverse;
+      }
+    }
+
+    @keyframes labelActive {
+      to {
+        transform: scale(1.5);
+      }
+    }
+    .addToCart {
+      margin-top: 2rem;
+
+      background: var(--orange);
+      color: #fff;
+      font-weight: bold;
+      border: 0;
+
+      height: 2.5rem;
+      padding: 0 2.2rem;
+      text-transform: uppercase;
+
+      transition: filter 0.2s ease;
+
+      &:hover {
+        filter: brightness(0.8);
+      }
+    }
+  }
+}
+
+.menu-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 1;
+
+  background: #fff;
+
+  transform: translateX(100vw);
+
+  opacity: 0;
+  visibility: hidden;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  transition: all 0.7s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+  a {
+    margin-top: 2rem;
+    display: block;
+    font-size: 2rem;
+    text-align: center;
+
+    position: relative;
+
+    &::before {
+      content: "";
+
+      width: 0;
+      height: 3px;
+
+      background: var(--orange);
+
+      position: absolute;
+      bottom: -1px;
+
+      transition: width 0.2s ease;
+    }
+
+    &:hover::before {
+      width: 100%;
+    }
+
+    &:nth-child(2n + 2)::before {
+      right: 0;
+    }
+    &:nth-child(2n + 1)::before {
+      left: 0;
+    }
+  }
+
+  &.active {
+    visibility: visible;
+
+    opacity: 1;
+
+    transform: translateX(0);
+  }
+}
